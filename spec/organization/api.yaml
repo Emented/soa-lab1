@@ -329,7 +329,7 @@ components:
           minLength: 1
         coordinates:
           description: Координаты
-          $ref: '#/Coordinates'
+          $ref: '#/components/schemas/Coordinates'
         creationDate:
           description: Дата создания
           type: string
@@ -340,14 +340,14 @@ components:
           minimum: 1
         type:
           description: Тип
-          $ref: '#/OrganizationType'
+          $ref: '#/components/schemas/OrganizationType'
         officialAddress:
           description: Официальный адрес
-          $ref: '#/Address'
+          $ref: '#/components/schemas/Address'
         employees:
           type: array
           items:
-            $ref: '#/Employee'
+            $ref: '#/components/schemas/Employee'
 
     Employee:
       type: object
@@ -381,7 +381,7 @@ components:
           minLength: 1
         coordinates:
           description: Координаты
-          $ref: '#/Coordinates'
+          $ref: '#/components/schemas/Coordinates'
         creationDate:
           description: Дата создания
           type: string
@@ -392,10 +392,10 @@ components:
           minimum: 1
         type:
           description: Тип
-          $ref: '#/OrganizationType'
+          $ref: '#/components/schemas/OrganizationType'
         officialAddress:
           description: Официальный адрес
-          $ref: '#/Address'
+          $ref: '#/components/schemas/Address'
 
 
     Coordinates:
@@ -468,12 +468,12 @@ components:
           description: Список с описанием фильтрации
           type: array
           items:
-            $ref: '#/SortingStrategy'
+            $ref: '#/components/schemas/SortingStrategy'
         filterStrategies:
           description: Список с описанием фильтрации
           type: array
           items:
-            $ref: '#/FilterStrategy'
+            $ref: '#/components/schemas/FilterStrategy'
 
     OrganizationField:
       description: Колонка организации для фильтрации и сортировки
@@ -501,9 +501,9 @@ components:
       type: object
       properties:
         sortingType:
-          $ref: '#/SortingType'
+          $ref: '#/components/schemas/SortingType'
         sortingColumn:
-          $ref: '#/OrganizationField'
+          $ref: '#/components/schemas/OrganizationField'
 
     FilterType:
       description: Тип фильтрации
@@ -525,9 +525,9 @@ components:
       type: object
       properties:
         filterColumn:
-          $ref: '#/OrganizationField'
+          $ref: '#/components/schemas/OrganizationField'
         filterType:
-          $ref: '#/FilterType'
+          $ref: '#/components/schemas/FilterType'
         filterValue:
           description: Значение которое будет использоваться для фильтрации
           type: string
@@ -542,9 +542,9 @@ components:
         organizations:
           type: array
           items:
-            $ref: '#/Organization'
+            $ref: '#/components/schemas/Organization'
         pager:
-          $ref: '#/Pager'
+          $ref: '#/components/schemas/Pager'
 
     CountResponse:
       type: object
